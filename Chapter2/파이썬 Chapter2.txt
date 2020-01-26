@@ -1,0 +1,123 @@
+Chaper 2 part 1
+상수(Contants): 값이 변하지 않는다. 숫자 문자열등이 상수
+print(123) #123으로 출력, 123이 상수
+print(98.6) #98.6으로 출력, 98.6이 상수
+print('Hello world') # Hello world로 출력, Hello world가 상수
+
+변수(Variables):변수를 통해 메모리를 할당하고 이름을 지어 무언가를 그곳에 넣을 수 있다. 보통 한 개의 값만 넣음
+x = 12.2
+print(x) # 12.2가 출력
+y = 14
+x = 100
+pirnt(x) # 100이 출력        전에 넣었던 12.2를 지우고 100으로 덮어써서 100이 출력 그래서 변수라 부름
+spam, eggs, spam23, _speed: 변수 이름으로 좋음
+23spam은 숫자로 시작하고 #sign은 해쉬로 시작하고 var.12에서 .은 변수 이름으로 사용할 수 없는 문자임
+spam Spam SPAM은 다 다르지만 파이썬이 헷갈릴 수 있기 때문에 쓰지말아야함
+
+할당문 (Assignment Statements): 대입문은 오른쪽에 있는 값을 계산한 다음에 왼쪽에 있는 값을 바꾸는것
+x = 0.6
+x = 3.9 * x * (1 - x)
+print(x) # 0.936이 출력됨
+          #3.9 * 0.6 * (1 - 0.6)
+x = 3.9 * x * ( 1 - x)
+print(x) # 0.2336256이 출력됨
+          #3.9 * 0.936 * (1 - 0.936)
+
+Chapter 2 part 2
+표현식은 대입문 오른쪽에 쓸 수 있는 조금 더 복잡한 계산
+수리 연산자 표현
++ Addition       더하기
+- Subtraction       빼기 
+* Multiplication 곱하기
+/ Division         나누기
+** Power          거듭제곱
+% Remainder 나머지 연산자
+xx = 2
+xx = xx + 2
+print(xx)
+4
+yy = 440 * 12
+print(yy)
+5280
+zz = yy / 1000
+print(zz)
+5.28
+
+jj = 23
+kk = jj % 5
+print(kk)
+3
+
+print(4 ** 3)
+64
+
+연산자 순위에서 괄호가 제일 우선 순위 다음이 거듭제곱 그다음이 곱하기 나누기 그다음이 곱하기 나누기 왼쪽에서 오른쪽
+
+타입: 동일한 + 연산자를 사용하더라도 정수, 부동 소수점 수 타입의 변수에서는 덧셈으로 작용하고 문자열 타입의 변수에서는 문자열을 이어주는 기능
+ddd= 1 + 4
+print(ddd) # 5로 출력됨
+
+eee = 'hello ' + 'there'    두개다 문자열인걸 알고  두 문자열을 이어 붙임 +는 띄어쓰기를 추가하지 않기 때문에
+               ↑ 여기에 공백 문자를 추가해줌
+print(eee) # hello there로 출력됨
+eee = eee + 1 문자열 타입과 정수형 타입을 더하려 했기 때문에 에러가 발생
+
+type은  타입을 알려달라는 함수
+type(eee)
+class 'str'     문자열타입이란 뜻
+type('hello')
+class 'str'     문자열타입이란 뜻
+type(1)
+class 'int'   정수라는 뜻
+
+숫자타입
+type(1)
+class 'int' 정수라는 뜻
+type(1.0
+class 'float' 부동 소수점 수라는 뜻
+
+타입 변환: 내제된 함수 float과 int를 써서 타입을 바꿀 수 있다
+print(float(99) + 100) 더하기를 하기전에 99.0으로 만들어서 결과값을 부동 소수점 수로 만듬
+199.0
+
+i = 42
+type(i)
+class 'int' 문자열이라는 뜻
+f = float(i)  float타입으로 바꿈
+print(f) 
+42.0         부동 소수점 수로 바뀜
+type(f)    
+class 'float 타입도 float으로 바뀜
+
+sval = '123' < 1, 2, 3 세 개의 문자로 이루어진 문자열
+type(sval)
+class 'str' 문자열이란 뜻
+print(sval + 1)
+type error: can't convart  'int' object  to str implicitly : 정수를 문자로 바꿀 수 없다는 뜻
+ival = int(sval) int타입으로 바꿈
+type(ival)
+class 'int'
+print(ival + 1)
+124          int타입으로 바꿔서 정수 123을 받은뒤 1을 더해 124가 나옴
+nsv = 'hello bob'
+niv = int(nsv)
+숫자로 이루어지지 않은 문자열을 넣으면 인식 불가능한 십진번 문자 어쩌구저쩌구라 뜸 숫자여야 하는데 문자를
+줬다는 뜻 따라서 실행하지 못함
+
+
+나눗셈
+파이썬에서의 정수 나눗셈은 항상 부동 소수점 수를 줌
+
+입력 print()을 통해 출력을 했다면 input()을 이용해 입력을 받을 수 있다
+nam = input('who are you? ') who are you라고 물어 볼 것이고 사용자는 입력값을 넣는다.
+print('welcome', nam)           해당 입력값을 nam이라는 변수에 할당한 다음 welcome이라는 문자열과 함께 출력
+
+주석
+#으로 주석을 시작
+주석은 사람이 읽기위한 용도로 사용 프로그래머나 프로그램을 수정할 사람이 읽음
+
+
+
+      
+
+
