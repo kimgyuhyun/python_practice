@@ -1,0 +1,115 @@
+Chapter4 part1
+
+함수(Function)
+함수는 반복적으로 호출해야 하는 코드의 묶음을 하나의 블럭으로 만들어 이름을 붙여 재사용률을 높인 "코드의 묶음"임 즉 함수를 저장했다가 재사용하는 것이다
+"def"는 정의된 함수를 뜻함 def부분은 실제로 실행되는 코드가 아니라 사실은 코드를 기억하는 부분
+
+def thing():
+    print('Hello')   아무런 일도 일어나지 않지만
+    print(''Fun')     이 두 코드를 기억하게됨
+
+thing()          을 입력하면 Hello Fun이 출력됨
+print('zip')
+thing()
+
+print()도 함수이고 두개의 소괄호와 함께 있는 키워드가 함수를 부를 때 사용하는 문법임
+
+big = max('Hello world')
+print(big)
+w                       big은 문자 w를 저장하고있는 변수
+
+
+내장 함수
+
+ 파이썬에는 이미 정의된 함수들이 있다
+
+print("Hello World") # ( 괄호 ) 안의 내용을 출력하는 함수
+input( ) # ( 괄호 ) 안의 사용자 입력값을 받는 함수
+float( ) # ( 괄호 ) 안의 값을 float로 변환하는 함수
+int( ) # ( 괄호 ) 안의 값을 int로 변환하는 함수
+
+int()함수는 실수형 숫자를 정수형으로 바꿀 수도 있지만 숫자로된 문자열도 바꿀 수 있음
+
+Chapter4 part2
+x = 5
+print('Hello')
+Hello
+
+def  print_lyrics():                                  당신이 새로운 무언가를 만들고 싶어하니 새로운것을 만들게요란 변수
+    print("I'm a lumberjack, and I'm Okay")
+    print(' I sleep all night and I work all day.')
+
+print('Yo')
+YO
+x = x + 2
+print(x)
+7
+
+x = 5
+print('Hello')
+Hello
+
+def  print_lyrics():                                       def는 출력을 만들지는 않지만
+    print("I'm a lumberjack, and I'm Okay")        여기에 내어쓰기가 되어있기 때문에
+    print('I sleep all night and I work all day.')     이것이 함수 print_lyrics(): 모두 포함된 코드 뭉치이다
+
+print('Yo)
+Yo
+print_lyrics()
+I'm a lumberjack, and I'm Okay
+I sleep all night and I work all day.
+x = x + 2
+print(x)
+7
+
+인자(Argument)
+인자란 함수를 호출할때 전달하는 값을 말합니다. 넘겨 받는 수 또는 값이라고 생각하면 쉽게 이해할 수 있을 듯합니다. 앞서 사용했었던 print 함수에 들어가는 문자열도 인자입니다.
+
+매개변수(Parameters)
+매개변수는  함수가 정의된 곳에서 변수처럼 사용하는 하는 것을 말함
+def great(lang):                 great함수에 인자는 lang이고 우리의 첫번째 매개 변수입니다 우리가 함수를 만들고
+    if lang == 'es':               매개변수를 받고 받은것이 무엇인지 알려줄  플레이스 홀더입니다
+      print('Hola')
+    elif lang == 'fr':
+      print('Bonjour')
+    else:
+      print('Hallo')
+
+great('en')
+Hallo
+great('es')
+Hola
+great('fr')
+Bonjour                      
+연속된 함수 호출에서 플레이스 홀더가 되어 프로그래머가 집어 넣은 무엇이든 첫번째 매개 변수로부터 받게됨
+따라서 우리는 이 정의에서 첫번째 매개 변수를 받을  준비가 되어 있고 매개 변수와 함께 함수를 호출해주면 다른 값에 따라 다르게 실행될 수 있다
+
+반환값(Return Value)
+종종 함수는 함수가 정의된 곳에서 전달받은 매개변수를 이용해 프로그래머가 의도한 코드를 실행 한 뒤, 계산 결과인 값을 반환 할 수도 있음. 이와 같은 상황이라면 당연히 함수를 다른 함수의 인자로 사용 할수도 있음
+반환은 매개 변수로 간주됨 그래서 매개 변수 없이 반환해서 함수의 실행을 멈출 수도 있다
+
+return 입력을 받아 출력값을 생성할수 있도록 반환
+
+def great(lang):
+	if lang == 'es':
+	    return 'Hola'
+	elif lang == 'fr':
+	    return 'Bonjour'
+	else:
+	    return 'Hello'
+
+print(great('en'),'Glennn')
+print(great('es'),'Sally')
+Hola sally
+print(great('fr'), 'Michael')
+Bonjour Michael
+
+def addtwo(a, b):
+    added = a + b
+    return added
+
+x = addtwo(3, 5)
+print(x)
+8
+
+

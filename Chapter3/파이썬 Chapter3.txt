@@ -1,0 +1,137 @@
+Chapter3 part1
+if 문
+if문의 기본적인 형태
+x = 5
+
+if x < 10 : # if는 예약어이며, 컴퓨터는 if 다음에 나오는 조건문의 True, False를 판단하게 됨
+    print('Smaller') #만약 True인 경우 :(콜론) 아래로 들여쓰기 된 부분을 실행하게 됨
+                       #여기서는 Smaller가 출력됨
+
+비교 연산자: 조건문의 참 또는 거짓을 판별하기 위해 사용되는 비교 연산자들이 있다
+>       x가 y보다  클 때 True, 그 외에는 False                 x > y
+<       x가 y보다 작을 때 True, 그 외에는 False               x < y
+>=     x가 y보다 크거나 같을때 True, 그 외에는 False      x>=y
+<=     x가 y보다 작거나 같을때 True, 그 외에는 False      x<=y
+==     x와 y가 같을때 True, 그 외에는 False                   x == y
+!=      x와 y가 다를 클 때 True, 그 외에는 False              x!=y
+
+내어쓰기에서 주석과 빈줄은 모두 무시됨
+들여쓰기 (indentation)
+
+파이썬에서는 들여쓰기를 매우 엄격하게 생각함
+들여쓰기가 제대로 되어 있지 않다면 파이썬은 문법 에러를 통해 우리에게 도움을 요청하게 됨
+통상 들여쓰기는 [Tab] 또는 [Space] 네 번 과 같음 하지만 컴퓨터가 탭을 잘못인식할 수도 있으니 space를 사용
+
+x = 5
+if x > 2 :
+    print('Bigger than 2')
+    print('Still bigger')         if문은  콜론을 시작으로 내어쓰기가 된줄을 포함하지 않은 곳 까지 이어짐
+print('done wich 2')
+
+for i in range(5) :
+    print(i)
+    if i > 2 :
+        print('Bigger than 2')
+    print('Done with i', i)               for문은 내어쓰기가 된 곳을 포함하지 않은 곳 까지 이어짐
+print('All Done')
+
+단일 if 문
+
+단일 if문으로 사용하는 경우, 조건문이 참인 경우에만 미리 입력해 놓은 실행코드를 실행하게 됨
+x = 5
+
+if x < 10 :
+    print('Smaller')
+
+if else 문
+첫번째 if문의 조건이 거짓인 경우 else문 이하의 실행코드가 실행됨
+x = 4
+if x > 2 :
+    print('Bigger') x가 2보다 크다면 실행됨
+else :
+    print(Smaller') x가 2보다 작으면 실행됨
+
+print 'all done'
+
+Chapter3 part2
+다중 분기 (Multi-way decisions)
+우리는 하나의 조건문 블럭에 프로그래머의 필요에 의해 조건문들을 추가할 수 있음
+elif라는 예약어를 통해서 가능함
+x = 21
+
+if x < 2 :
+    print('Small')
+elif x < 10 :
+    print('Medium')
+elif x < 20 :
+    print('Big')
+elif x < 40 :
+    print('Large')
+elif x < 100 :
+    print('Huge')
+else :
+    print('Ginormous')
+
+# Large가 출력됨
+
+else가 없으면 적어도 한개는 실행된다는 보장이 없음
+
+if x < 2 :
+    print('Balor 2')
+elif x < 20 :
+    print('Balow 20')
+elif x < 10 :                   이 블록을 위로 올리면 더 합리적으로 바꿀 수 있음
+    print('Balow 10')
+else :
+    print('Something else')
+
+파이썬은 복구하고싶은 부분에 traceback 에러를 띄우는 경향이 있음
+try / except
+파이썬에서는 발생할 수 있는 error에 대해서 프로그래머가 미리 대처를 할 수 있도록 하였습니다. 이는 try / except로 가능함
+
+astr = 'Hello Bob'
+try:
+    istr = int(astr)   이 문자열은 정수로 못만들꺼기 때문에 실패되고
+except:                except가 있기 때문에 traceback에러 대신 except 부분이 실행됨
+    istr = -1
+print('First', istr)                  First -1이 출력됨
+
+astr = '123'
+try:
+    istr = int(astr)     int타입으로 바꿈
+except:
+    istr = -1            try가 실행되었기 때문에 except 블록은 무시됨
+print('Second', istr)            second 123이 출력됨
+
+except는 잘못된걸 알려주는 깃발같은 존재 하지만 남용하지 않도록 조심 try 블록에 한줄 이상을 넣어서 예외가
+발생해 실행이 중단되면 다시 try 블록으로 돌아오지 않음
+
+astr = 'Bob'
+try:
+    print('Hello')          출력문은 절대 중단되지 않음
+    istr = int(astr)        이 문자열은 정수로 못바꾸니까 실행이 중단됨
+    print('There')         이 부분은 절대 실행되지 않음 따라서 try,except가 전체 보험을 드는것이 아님
+except: 
+    istr = -1
+
+astr = 'Bob'
+try:
+    print('Hello')       이 출력문은 위에 놓고
+    istr = int(astr)     중단될 것 같은 이 한 줄만 try 블록에 놓는 것이 좋음
+    print('There')       이 출력문은 아래에 놓아
+except: 
+    istr = -1
+
+rawstr = input('Enter a number:')                     
+try:
+    ival = int(rawstr)                           Enter a number:42  숫자로된 문자열을 넣었으니 try가 실행
+except:                                            Nice work              0보다 크니 if문이 실행
+    ival = -1
+
+if ival > 0                                        Enter a number:forty-two    이 문자열을 넣었으니 try는 실행되지 않고
+    print('Nice work')                                                                 except가 실행
+else                                                0보다 작으니 else문이 실행
+    print('Not a number')
+
+   
+
